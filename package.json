@@ -1,0 +1,17 @@
+{
+  "name": "testcafe-hanging-sockets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node ./index.js",
+    "test": "testcafe chrome:headless ./test.js -c 10",
+    "test:debug": "testcafe chrome ./test.js -L"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "testcafe": "^1.19.0"
+  }
+}

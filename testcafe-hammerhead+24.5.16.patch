@@ -1,0 +1,13 @@
+diff --git a/node_modules/testcafe-hammerhead/lib/request-pipeline/destination-request/index.js b/node_modules/testcafe-hammerhead/lib/request-pipeline/destination-request/index.js
+index a52e983..f921d80 100644
+--- a/node_modules/testcafe-hammerhead/lib/request-pipeline/destination-request/index.js
++++ b/node_modules/testcafe-hammerhead/lib/request-pipeline/destination-request/index.js
+@@ -196,7 +196,7 @@ class DestinationRequest extends events_1.EventEmitter {
+             if (!this.opts.isHttps && this.opts.proxy)
+                 this._fatalError(messages_1.MESSAGE.cantEstablishProxyConnection, this.opts.proxy.host);
+             else
+-                this._fatalError(messages_1.MESSAGE.cantResolveUrl);
++                this.emit('socketHangUp');
+         }
+         else
+             this.emit('error', err);

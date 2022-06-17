@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <div id="response"></div>
+        <div id="noResponse"></div>
+        <script>
+            fetch('http://localhost:3666/api')
+                .then(response => response.json())
+                .then(data => document.getElementById('response').innerText = data);
+            fetch('http://localhost:3777/api') // invalid port that is not serving anything
+                .then(response => response.json())
+                .then(data => document.getElementById('noResponse').innerText = data);
+        </script>
+    </body>
+</html>
